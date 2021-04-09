@@ -17,7 +17,10 @@ function Movie({id, year, title, summary, poster, genres}) {
         }
     }}> 
         <div className="movies_ movie">
-        <img src={poster} alt={title} title={title}/>
+        <img src={poster} alt={title} onError=  {(e) => {
+            e.target.src = "https://cdn3.iconfinder.com/data/icons/hosting-glyphs/60/error__attack__dos_404_-512.png";
+        }}
+        title={title}/>
         <div className="movie_data">
             <h3 className="movie_title">{title}</h3>
             <h5 className="movie_year">{year}</h5>

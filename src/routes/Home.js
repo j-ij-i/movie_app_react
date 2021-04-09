@@ -25,8 +25,14 @@ class Home extends React.Component {
         } = await axios.get(
             "https://yts-proxy.nomadcoders1.now.sh/list_movies.json?sort_by=rating"
         );
-        console.log(movies);
-        this.setState({movies, isLoading: false});
+
+        if(!movies.poster)
+            console.log(movies.poster);
+
+          this.setState({movies, isLoading: false});
+          console.log(movies);
+
+
     }
 
     componentDidMount() {
